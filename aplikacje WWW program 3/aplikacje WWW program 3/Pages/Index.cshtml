@@ -1,0 +1,44 @@
+﻿@page
+@using Microsoft.AspNetCore.Http
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Spełnia kryteria FizzBuzz?</h1>
+    <p>Podaj liczbę całkowitą z zakresu 1 - 1000:</p>
+    <form method="post">
+        <label asp-for="FizzBuzz.Number"></label>
+        <input asp-for="FizzBuzz.Number" /><br />
+        <button type="submit">Sprawdź</button> <br />
+        <span asp-validation-for="FizzBuzz.Number" class="text-danger font-weight-bold"></span>
+    </form>
+
+    @if (Model.FizzBuzz != null && ModelState.IsValid)
+    {
+        <p>
+            @{
+                String result = "";
+                if (Model.FizzBuzz.Number % 3 == 0)
+                {
+                    result += "Fizz";
+                }
+                if (Model.FizzBuzz.Number % 5 == 0)
+                {
+                    result += "Buzz";
+                }
+                if (Model.FizzBuzz.Number % 3 != 0 && Model.FizzBuzz.Number % 5 != 0)
+                {
+                <p>Twoja liczba nie spełnia kryteriów FizzBuzz</p>
+            }
+            }
+            </p>
+            if (result != "")
+            {
+                <span class="font-weight-bold">Wynik: @result</span>
+            }
+        }
+
+</div>
+
