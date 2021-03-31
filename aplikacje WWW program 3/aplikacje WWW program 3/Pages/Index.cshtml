@@ -17,28 +17,8 @@
 
     @if (Model.FizzBuzz != null && ModelState.IsValid)
     {
-        <p>
-            @{
-                String result = "";
-                if (Model.FizzBuzz.Number % 3 == 0)
-                {
-                    result += "Fizz";
-                }
-                if (Model.FizzBuzz.Number % 5 == 0)
-                {
-                    result += "Buzz";
-                }
-                if (Model.FizzBuzz.Number % 3 != 0 && Model.FizzBuzz.Number % 5 != 0)
-                {
-                <p>Twoja liczba nie spełnia kryteriów FizzBuzz</p>
-            }
-            }
-            </p>
-            if (result != "")
-            {
-                <span class="font-weight-bold">Wynik: @result</span>
-            }
-        }
+        <span class="font-weight-bold">Wynik: @Model.FizzBuzz.result</span>
+    }
 
 </div>
 

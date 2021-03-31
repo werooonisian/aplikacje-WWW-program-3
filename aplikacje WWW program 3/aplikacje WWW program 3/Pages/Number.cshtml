@@ -1,0 +1,27 @@
+﻿@page
+@model aplikacje_WWW_program_3.Pages.NumberModel
+@{
+    ViewData["Title"] = "Ostatnio wyszukiwane";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Dane w zapisane w sesji:</p>
+@if (Model.FizzBuzz == null)
+{
+    <p class="font-weight-bold">Brak danych</p>
+}
+@if (Model.FizzBuzz != null)
+{
+    <p>
+        @Html.DisplayNameFor(model => Model.FizzBuzz.Number):
+        @Model.FizzBuzz.Number
+    </p>
+    <p>
+        @Html.DisplayNameFor(model => Model.FizzBuzz.result):
+        @Model.FizzBuzz.result
+    </p>
+    <p>
+        @Html.DisplayNameFor(model => Model.FizzBuzz.data):
+        @Model.FizzBuzz.data
+    </p>
+}

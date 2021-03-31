@@ -15,8 +15,6 @@ namespace aplikacje_WWW_program_3.Pages
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
-        [BindProperty]
-        public FizzBuzz FizzBuzz { get; set; }
 
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
@@ -25,10 +23,6 @@ namespace aplikacje_WWW_program_3.Pages
 
         public void OnGet()
         {
-            var SessionFizzBuzz = HttpContext.Session.GetString("SessionFizzBuzz");
-            if (SessionFizzBuzz != null)
-              FizzBuzz = JsonConvert.DeserializeObject<FizzBuzz>(SessionFizzBuzz);
-
         }
 
     }

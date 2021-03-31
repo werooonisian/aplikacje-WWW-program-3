@@ -14,7 +14,6 @@ namespace aplikacje_WWW_program_3.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public const string SessionKeyNumber = "_Number";
         public string SessionInfo_Number { get; private set; }
 
         [BindProperty]
@@ -27,7 +26,18 @@ namespace aplikacje_WWW_program_3.Pages
 
         public void OnGet()
         {
-            var number = HttpContext.Session.GetInt32(SessionKeyNumber);
+            
+        }
+
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                FizzBuzz.Wyswietl();
+                FizzBuzz.pobierzDate(DateTime.Now);
+                HttpContext.Session.SetString("Number", JsonConvert.SerializeObject(FizzBuzz));
+            }
+            return Page();
         }
 
     }
