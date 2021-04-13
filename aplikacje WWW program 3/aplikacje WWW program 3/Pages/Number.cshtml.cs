@@ -13,6 +13,7 @@ namespace aplikacje_WWW_program_3.Pages
     public class NumberModel : PageModel
     {
         public FizzBuzz FizzBuzz { get; set; }
+
         public void OnGet()
         {
             var SessionFizzBuzz = HttpContext.Session.GetString("Number");
