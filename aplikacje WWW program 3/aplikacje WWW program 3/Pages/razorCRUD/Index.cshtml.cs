@@ -24,7 +24,8 @@ namespace aplikacje_WWW_program_3.Pages.razorCRUD
         public async Task OnGetAsync()
         {
             FizzBuzzList = await _context.FizzBuzz.ToListAsync();
-            FizzBuzzList = FizzBuzz.ogarnijListe(FizzBuzzList);
+            // FizzBuzzList = FizzBuzz.ogarnijListe(FizzBuzzList);
+            FizzBuzzList = _context.FizzBuzz.Take(10).OrderByDescending(d => d.data).ToList();
             await _context.SaveChangesAsync();
         }
     }

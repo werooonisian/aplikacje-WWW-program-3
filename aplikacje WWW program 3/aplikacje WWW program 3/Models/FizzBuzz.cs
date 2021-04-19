@@ -37,7 +37,7 @@ namespace aplikacje_WWW_program_3.Models
             }
         }
 
-        public static List<FizzBuzz> ogarnijListe(List<FizzBuzz> lista)
+       /* public static List<FizzBuzz> ogarnijListe(List<FizzBuzz> lista)
         {
             List<FizzBuzz> ostatnie10 = new List<FizzBuzz>();
             int num = lista.Count;
@@ -53,6 +53,6 @@ namespace aplikacje_WWW_program_3.Models
                 num--;
             }
             return ostatnie10;
-        }
+        } */
     }
 }
