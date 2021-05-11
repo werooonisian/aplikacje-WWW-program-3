@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "aplikacje_WWW_program_3ContextConnection"
+    }
+  }
+}

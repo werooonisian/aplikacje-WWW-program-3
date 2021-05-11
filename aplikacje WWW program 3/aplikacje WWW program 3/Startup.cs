@@ -2,6 +2,7 @@ using aplikacje_WWW_program_3.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,7 @@ namespace aplikacje_WWW_program_3
             });
             services.AddRazorPages();
             services.AddDistributedMemoryCache(); //DODANE, do zapisu wiêkszych formacji
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(1000); //czas (podany w sekundach) a¿ sesja wygaœnie
@@ -62,6 +64,7 @@ namespace aplikacje_WWW_program_3
 
             app.UseRouting();
 
+            app.UseAuthentication(); //grrr
             app.UseAuthorization();
 
             app.UseSession(); //DODANE, musi znajdowaæ siê przed UseEndpoints();

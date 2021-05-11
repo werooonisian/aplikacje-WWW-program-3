@@ -10,13 +10,13 @@ namespace aplikacje_WWW_program_3.Models
 {
     public class FizzBuzz
     {
+       // public string OwnerID { get; set; } // user ID from AspNetUser table.
         public int Id { get; set; }
         [Range(1, 1000)] //zakres dla naszego inta
         //[Required(ErrorMessage ="Pole jest obowiązkowe")] - dla int podobno nie trzeba 
         public int Number { get; set; }
         public string result { get; set; }
         public DateTime data { get; set; }
-
         public void pobierzDate(DateTime data)
         {
             this.data = data;
@@ -36,6 +36,8 @@ namespace aplikacje_WWW_program_3.Models
                 result = "Twoja liczba nie spełnia kryteriów FizzBuzz";
             }
         }
+
+
 
        /* public static List<FizzBuzz> ogarnijListe(List<FizzBuzz> lista)
         {

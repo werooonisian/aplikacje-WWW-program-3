@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace aplikacje_WWW_program_3.Pages
 {
     public class IndexModel : PageModel

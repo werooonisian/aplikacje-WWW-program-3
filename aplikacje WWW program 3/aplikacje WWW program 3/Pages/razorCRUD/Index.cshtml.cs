@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using aplikacje_WWW_program_3.Data;
 using aplikacje_WWW_program_3.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace aplikacje_WWW_program_3.Pages.razorCRUD
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly aplikacje_WWW_program_3.Data.ContextClass _context;
@@ -25,7 +27,7 @@ namespace aplikacje_WWW_program_3.Pages.razorCRUD
         {
             FizzBuzzList = await _context.FizzBuzz.ToListAsync();
             // FizzBuzzList = FizzBuzz.ogarnijListe(FizzBuzzList);
-            FizzBuzzList = _context.FizzBuzz.Take(10).OrderByDescending(d => d.data).ToList();
+            FizzBuzzList = _context.FizzBuzz.OrderByDescending(d => d.data).Take(20).ToList();
             await _context.SaveChangesAsync();
         }
     }
